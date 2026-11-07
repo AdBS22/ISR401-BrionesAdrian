@@ -1,7 +1,159 @@
-\documentclass{article}
+\documentclass[11pt,a4paper]{article}
+
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage[spanish]{babel}
+\usepackage[margin=2cm]{geometry}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{csquotes}
+\usepackage[backend=biber,style=ieee]{biblatex}
+\addbibresource{references.bib}
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\title{Clasificación y cuantificación de requisitos de un sistema de gestión de citas médicas\\[0.6em]
+\large FORM-TL-01, Ingeniería de Requerimientos (ISR-401)}
+\author{Briones Solórzano William Adrian}
+\date{7 de noviembre de 2026}
 
 \begin{document}
-Prueba de compilación.
+
+\maketitle
+
+\section{Clasificación de los enunciados}
+
+Cada enunciado del caso del Policlínico Ribera del Quevedo se clasifica por tipo, nivel y alcance. Los requisitos de calidad se asocian a las características de ISO/IEC 25010:2023~\cite{iso25010}.
+
+{\small
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{L{1.3cm}L{4.3cm}L{2.2cm}L{1.6cm}L{1.6cm}L{3.2cm}}
+\toprule
+\textbf{Código} & \textbf{Enunciado} & \textbf{Tipo} & \textbf{Nivel} & \textbf{Alcance} & \textbf{Justificación} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Código} & \textbf{Enunciado} & \textbf{Tipo} & \textbf{Nivel} & \textbf{Alcance} & \textbf{Justificación} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+E01 & El paciente podrá reservar una cita eligiendo especialidad, médico, fecha y hora entre los horarios disponibles. & Funcional & Producto & Software & Permite reservar citas mediante la aplicación. \\
+E02 & La plataforma enviará al paciente un recordatorio por mensaje de texto 24 horas antes de su cita. & Funcional & Producto & Software & Automatiza el envío de recordatorios. \\
+E03 & La aplicación debe ser rápida. & Calidad (eficiencia en el desempeño) & Producto & Software & Exige rapidez en las respuestas del software. \\
+E04 & El recepcionista podrá registrar la llegada del paciente que se acerca a la ventanilla. & Funcional & Producto & Software & Permite registrar la llegada de pacientes. \\
+E05 & La plataforma se desarrollará en Java 21 con base de datos PostgreSQL, tecnologías que domina el área de TI. & Restricción & Producto & Software & Impone tecnologías específicas de desarrollo. \\
+E06 & El médico podrá consultar la lista de pacientes del día y marcar cada consulta como atendida. & Funcional & Producto & Software & Permite consultar y actualizar consultas. \\
+E07 & Los datos de salud de los pacientes deben estar seguros. & Calidad (seguridad) & Producto & Software & Exige proteger la información médica. \\
+E08 & La aplicación móvil debe funcionar en teléfonos con Android 10 o superior. & Restricción & Producto & Software & Limita las versiones de Android compatibles. \\
+E09 & Una cita cancelada con menos de cuatro horas de anticipación se registrará como inasistencia. & Restricción & Producto & Software & Establece una regla obligatoria de cancelación. \\
+E10 & La plataforma debe ser fácil de usar para los pacientes adultos mayores. & Calidad (capacidad de interacción) & Producto & Software & Exige facilidad de uso para adultos mayores. \\
+E11 & El proyecto debe entregarse en un plazo máximo de seis meses. & Restricción & Proceso & Sistema & Establece un plazo máximo de entrega. \\
+E12 & La sesión de un usuario se cerrará automáticamente tras 10 minutos sin actividad. & Funcional & Producto & Software & Automatiza el cierre de sesiones inactivas. \\
+E13 & El quiosco de la sala de espera leerá el número de cédula ingresado en su pantalla táctil e imprimirá un ticket con el número de turno. & Funcional & Producto & Sistema & Integra software, pantalla táctil e impresora. \\
+E14 & La plataforma debe estar siempre disponible. & Calidad (fiabilidad) & Producto & Software & Exige disponibilidad continua del servicio. \\
+E15 & El director médico podrá generar un reporte mensual de inasistencias por especialidad. & Funcional & Producto & Software & Permite generar reportes de inasistencias. \\
+E16 & Cada incremento se validará con el director médico al final de cada iteración de dos semanas. & Restricción & Proceso & Sistema & Obliga a validar los incrementos periódicamente. \\
+E17 & El tratamiento de los datos personales de los pacientes debe cumplir la Ley Orgánica de Protección de Datos Personales del Ecuador. & Restricción & Producto & Sistema & Impone el cumplimiento de una ley nacional. \\
+E18 & La plataforma debe integrarse sin problemas con el sistema de facturación actual. & Calidad (compatibilidad) & Producto & Software & Exige interoperabilidad con facturación. \\
+E19 & Si el servidor principal falla, la plataforma debe restablecer el servicio en menos de 30 minutos sin perder ninguna cita confirmada. & Calidad (fiabilidad) & Producto & Sistema & Exige recuperar el servicio sin perder citas. \\
+E20 & Todo cambio en el código fuente será revisado por otro integrante del equipo antes de integrarse a la rama principal. & Restricción & Proceso & Software & Obliga a revisar el código antes de integrarlo. \\
+\end{longtable}
+}
+
+\subsection{Características y subcaracterísticas de ISO/IEC 25010:2023}
+
+{\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{L{1.5cm}L{6.0cm}L{6.0cm}}
+\toprule
+\textbf{Código} & \textbf{Característica} & \textbf{Subcaracterística} \\
+\midrule
+E03 & Eficiencia de desempeño (Performance Efficiency) & Time Behaviour \\
+E07 & Seguridad (Security) & Confidentiality, Integrity \\
+E10 & Capacidad de interacción (Interaction Capability) & Learnability, Operability \\
+E14 & Fiabilidad (Reliability) & Availability \\
+E18 & Compatibilidad (Compatibility) & Interoperability \\
+E19 & Fiabilidad (Reliability) & Recoverability, Fault Tolerance \\
+\bottomrule
+\end{tabular}
+}
+
+\section{Requisitos de calidad cuantificados}
+
+Los umbrales son propuestas para el ejercicio académico, no resultados obtenidos de pruebas reales.
+
+{\small
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{L{1.3cm}L{2.4cm}L{2.4cm}L{3.4cm}L{5.0cm}}
+\toprule
+\textbf{Código} & \textbf{Métrica} & \textbf{Unidad} & \textbf{Umbral verificable} & \textbf{Redacción cuantificada} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Código} & \textbf{Métrica} & \textbf{Unidad} & \textbf{Umbral verificable} & \textbf{Redacción cuantificada} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+E03 & Tiempo de respuesta & Segundos (s) & $\leq$ 2 segundos en el 95\,\% de solicitudes, con 300 usuarios concurrentes. & La aplicación deberá responder a las consultas de citas disponibles en un máximo de 2 segundos para el 95\,\% de las solicitudes, con hasta 300 usuarios concurrentes. \\
+E07 & Cifrado de datos y vulnerabilidades & Estándar criptográfico y número de vulnerabilidades & AES-256, TLS 1.3 y 0 vulnerabilidades altas o críticas. & La plataforma deberá cifrar los datos de salud mediante AES-256 en reposo y TLS 1.3 en tránsito, sin presentar vulnerabilidades altas o críticas en las pruebas de seguridad. \\
+E10 & Tasa de éxito y tiempo de reserva & Porcentaje (\%) y minutos (min) & $\geq$ 85\,\% de éxito en menos de 3 minutos. & Al menos el 85\,\% de los pacientes de 60 años o más deberá completar la reserva de una cita en menos de 3 minutos, en su primer intento y sin asistencia. \\
+E14 & Disponibilidad del servicio & Porcentaje (\%) & $\geq$ 99,5\,\% mensual durante el horario de atención. & La plataforma deberá mantener una disponibilidad mensual mínima del 99,5\,\% durante el horario de atención del policlínico, de lunes a sábado, de 07:00 a 19:00. \\
+E18 & Tiempo de integración y tasa de errores & Segundos (s) y porcentaje (\%) & $\leq$ 1,5 segundos y menos del 0,1\,\% de errores. & La plataforma deberá transmitir los datos de las citas confirmadas al sistema de facturación en un máximo de 1,5 segundos, con una tasa de errores de sincronización inferior al 0,1\,\% diario. \\
+\end{longtable}
+}
+
+\section{Dudas de clasificación (análisis individual)}
+
+{\small
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{L{1.3cm}L{4.0cm}L{8.4cm}}
+\toprule
+\textbf{Código} & \textbf{Duda de clasificación} & \textbf{Decisión y justificación} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Código} & \textbf{Duda de clasificación} & \textbf{Decisión y justificación} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+E09 & Funcional o restricción & Elegí restricción porque establece una regla de negocio sobre las cancelaciones. \\
+E12 & Funcional o calidad (seguridad) & Elegí funcional porque describe una acción automática del software: cerrar sesiones inactivas. \\
+E13 & Software o sistema & Elegí sistema porque involucra componentes físicos y software. \\
+E17 & Calidad (seguridad) o restricción & Elegí restricción porque exige cumplir una ley. \\
+E18 & Software o sistema & Elegí software porque la integración se realiza mediante interfaces entre aplicaciones. \\
+\end{longtable}
+}
+
+\clearpage
+\section{Declaración de uso de inteligencia artificial}
+
+El análisis y las decisiones de clasificación son del estudiante. Las herramientas de inteligencia artificial se usaron como apoyo en lo siguiente.
+
+{\small
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{L{3.6cm}L{3.2cm}L{7.4cm}}
+\toprule
+\textbf{Herramienta} & \textbf{Versión} & \textbf{Propósito} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Herramienta} & \textbf{Versión} & \textbf{Propósito} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Claude (Anthropic) & Claude Sonnet 5.5 & Explicación del método de clasificación, retroalimentación sobre borradores, instalación de Git y LaTeX, y maquetación del documento en LaTeX. \\
+NotebookLM (Google) & Sin versión visible & Explicación de fragmentos de las normas ISO/IEC 25010:2023 e ISO/IEC/IEEE 29148:2018 a partir de copias parciales en inglés. \\
+ChatGPT (OpenAI) & GPT-6 & Parafraseo de la redacción de las tablas de clasificación y cuantificación. \\
+\end{longtable}
+}
+
+Verificación del resultado: contrasté las clasificaciones con el texto del caso. Para E03, E10 y E18 comparé la característica y la subcaracterística asignadas con las definiciones de eficiencia de desempeño, interacción y compatibilidad del extracto público de la ISO/IEC 25010:2023. Las demás definiciones de las normas las entendí con las explicaciones de NotebookLM sobre copias parciales.
+
+\printbibliography
+
 \end{document}
