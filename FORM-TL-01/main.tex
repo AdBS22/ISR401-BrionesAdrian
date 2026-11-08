@@ -105,28 +105,61 @@ E18 & Tiempo de integración y tasa de errores & Segundos (s) y porcentaje (\%) 
 \end{longtable}
 }
 
-\section{Dudas de clasificación (análisis individual)}
+\section{Comparación con el compañero Rivera}
+
+Contrasté mi clasificación con la de mi compañero Rivera para identificar discrepancias. Las diferencias se resumen en la tabla siguiente y se explican después.
+
+\subsection{Tabla comparativa de las diferencias}
 
 {\small
 \setlength{\tabcolsep}{4pt}
-\begin{longtable}{L{1.3cm}L{4.0cm}L{8.4cm}}
+\begin{longtable}{L{3.8cm}L{6.0cm}L{6.0cm}}
 \toprule
-\textbf{Código} & \textbf{Duda de clasificación} & \textbf{Decisión y justificación} \\
+\textbf{Requisito} & \textbf{Rivera} & \textbf{Briones} \\
 \midrule
 \endfirsthead
 \toprule
-\textbf{Código} & \textbf{Duda de clasificación} & \textbf{Decisión y justificación} \\
+\textbf{Requisito} & \textbf{Rivera} & \textbf{Briones} \\
 \midrule
 \endhead
 \bottomrule
 \endfoot
-E09 & Funcional o restricción & Elegí restricción porque establece una regla de negocio sobre las cancelaciones. \\
-E12 & Funcional o calidad (seguridad) & Elegí funcional porque describe una acción automática del software: cerrar sesiones inactivas. \\
-E13 & Software o sistema & Elegí sistema porque involucra componentes físicos y software. \\
-E17 & Calidad (seguridad) o restricción & Elegí restricción porque exige cumplir una ley. \\
-E18 & Software o sistema & Elegí software porque la integración se realiza mediante interfaces entre aplicaciones. \\
+E09: cancelación con menos de 4 horas & Funcional & Restricción \\
+E10: facilidad de uso para adultos mayores & Calidad: capacidad de interacción, con Inclusivity y Operability & Calidad: capacidad de interacción, con Learnability y Operability \\
+E19: recuperación del servicio & Calidad: fiabilidad, con Recoverability & Calidad: fiabilidad, con Recoverability y Fault Tolerance \\
 \end{longtable}
 }
+
+\subsection{Explicación de las diferencias}
+
+\paragraph{E09: funcional o restricción.} El enunciado dice: <<Una cita cancelada con menos de cuatro horas de anticipación se registrará como inasistencia>>.
+\begin{itemize}
+\item Rivera lo considera funcional porque describe una acción que el software debe realizar al registrar una cancelación tardía.
+\item Yo lo considero una restricción porque establece una regla de negocio obligatoria sobre las cancelaciones.
+\end{itemize}
+Rivera se centra en el comportamiento que ejecuta el sistema, mientras que yo me centro en la regla de negocio que condiciona ese comportamiento.
+
+\paragraph{E10: diferencia en la subcaracterística de calidad.} El enunciado dice: <<La plataforma debe ser fácil de usar para los pacientes adultos mayores>>.
+\begin{itemize}
+\item Rivera lo clasifica como calidad, dentro de capacidad de interacción, con Inclusivity y Operability. Entiende que la plataforma debe adaptarse a las necesidades de los adultos mayores.
+\item Yo también lo clasifico como calidad dentro de capacidad de interacción, pero con Learnability y Operability. Entiendo que los adultos mayores deben poder aprender y usar la plataforma con facilidad.
+\end{itemize}
+Coincidimos en la característica principal. Rivera prioriza la inclusividad y yo la facilidad de aprendizaje.
+
+\paragraph{E19: diferencia en la subcaracterística de fiabilidad.} El enunciado dice: <<Si el servidor principal falla, la plataforma debe restablecer el servicio en menos de 30 minutos sin perder ninguna cita confirmada>>.
+\begin{itemize}
+\item Rivera lo clasifica como calidad, dentro de fiabilidad, con Recoverability. Entiende que el requisito exige restaurar el servicio y conservar los datos después de una falla.
+\item Yo también lo clasifico como calidad dentro de fiabilidad, pero con Recoverability y Fault Tolerance. Considero que ambas propiedades se relacionan con la continuidad y la recuperación del servicio.
+\end{itemize}
+Coincidimos en Recoverability como subcaracterística principal. Yo incorporo Fault Tolerance, mientras que Rivera se limita a la recuperación posterior a la falla.
+
+\subsection{Conclusión de la comparación}
+
+Al comparar ambas clasificaciones, 19 de los 20 requisitos coinciden en tipo, nivel y alcance. La única diferencia en la clasificación principal es E09, que Rivera considera funcional y yo clasifico como restricción.
+
+En E10 y E19 coincidimos en el tipo de requisito y en la característica principal de calidad, pero elegimos subcaracterísticas distintas de la norma ISO/IEC 25010:2023.
+
+Estas diferencias muestran que un mismo requisito puede interpretarse desde enfoques distintos. Por eso conviene justificar cada decisión de clasificación y acordar criterios comunes para el análisis.
 
 \clearpage
 \section{Declaración de uso de inteligencia artificial}
