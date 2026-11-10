@@ -13,11 +13,4 @@
 *.lot
 Thumbs.db
 Desktop.ini
-*.bcf
-*.run.xml
-*.fls
-*.fdb_latexmk
-*.lof
-*.lot
-Thumbs.db
-Desktop.ini
+

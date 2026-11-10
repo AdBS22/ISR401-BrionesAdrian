@@ -1,0 +1,141 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{csquotes}
+\usepackage[backend=biber,style=ieee]{biblatex}
+\addbibresource{referencias.bib}
+
+\title{TA-IND-01: IEEE 29148 y tipos de requisitos del Explorador de archivos de Windows 10}
+\author{Briones Solórzano William Adrian\\
+Ingeniería de Requerimientos (ISR-401), UTEQ}
+\date{Noviembre de 2026}
+
+\begin{document}
+
+\maketitle
+
+% =====================================================================
+\section{Descripción del sistema}
+% Un párrafo: propósito del sistema, usuarios y contexto de uso.
+% Redáctalo con tus palabras a partir de cómo usas el sistema.
+
+
+% =====================================================================
+\section{Resumen analítico de la norma}
+% De 1,5 a 2 páginas, con tus palabras (no una traducción).
+% Debe explicar: qué es un requisito bien formado, las nueve
+% características del requisito individual, las características del
+% conjunto y los términos ambiguos que la norma prohíbe.
+% Cita la cláusula exacta de cada idea, por ejemplo: \cite[Cl.~5.2.5]{iso29148}.
+
+
+% =====================================================================
+\section{Glosario}
+% 10 términos de la cláusula 3, con definición parafraseada y un
+% ejemplo propio en el sistema elegido.
+\begin{longtable}{>{\raggedright\arraybackslash}p{3cm}
+                  >{\raggedright\arraybackslash}p{6.5cm}
+                  >{\raggedright\arraybackslash}p{6cm}}
+\caption{Glosario de términos de la cláusula 3.}\label{tab:glosario}\\
+\toprule
+Término & Definición parafraseada & Ejemplo en el sistema \\
+\midrule
+\endfirsthead
+\toprule
+Término & Definición parafraseada & Ejemplo en el sistema \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+% Término 1 & definición & ejemplo \\
+\end{longtable}
+
+
+% =====================================================================
+\section{Requisitos del sistema}
+% 15 requisitos que cubran al menos cinco tipos distintos, con al menos
+% cinco de calidad clasificados según ISO/IEC 25010:2023 y con métrica.
+% Las capturas de figuras/ respaldan los requisitos.
+
+% Ejemplo de cómo insertar una captura (descomenta y ajusta el nombre):
+% \begin{figure}[ht]
+%   \centering
+%   \includegraphics[width=0.8\textwidth]{figuras/nombre_de_la_captura.png}
+%   \caption{Descripción de lo que muestra la captura.}
+%   \label{fig:nombre}
+% \end{figure}
+
+{\small
+\begin{longtable}{>{\raggedright\arraybackslash}p{1cm}
+                  >{\raggedright\arraybackslash}p{4.2cm}
+                  >{\raggedright\arraybackslash}p{1.9cm}
+                  >{\raggedright\arraybackslash}p{2.4cm}
+                  >{\raggedright\arraybackslash}p{2.2cm}
+                  >{\raggedright\arraybackslash}p{2.3cm}}
+\caption{Clasificación de los requisitos del sistema.}\label{tab:requisitos}\\
+\toprule
+ID & Enunciado & Tipo & Característica ISO/IEC 25010 & Métrica & Criterio de aceptación \\
+\midrule
+\endfirsthead
+\toprule
+ID & Enunciado & Tipo & Característica ISO/IEC 25010 & Métrica & Criterio de aceptación \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+% RQ-01 & enunciado & tipo & característica y subcaracterística & métrica & criterio \\
+\end{longtable}
+}
+
+
+% =====================================================================
+\section{Autoevaluación}
+% Revisa cada requisito contra las nueve características de 5.2.5 y los
+% términos prohibidos de 5.2.7. Para los que fallen, deja la versión
+% anterior y la corregida.
+{\small
+\begin{longtable}{>{\raggedright\arraybackslash}p{1cm}
+                  >{\raggedright\arraybackslash}p{5cm}
+                  >{\raggedright\arraybackslash}p{3.5cm}
+                  >{\raggedright\arraybackslash}p{5.5cm}}
+\caption{Autoevaluación de los requisitos.}\label{tab:autoevaluacion}\\
+\toprule
+ID & Versión anterior & Qué falla & Versión corregida \\
+\midrule
+\endfirsthead
+\toprule
+ID & Versión anterior & Qué falla & Versión corregida \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+% RQ-xx & versión anterior & característica o término & versión corregida \\
+\end{longtable}
+}
+
+
+% =====================================================================
+\section{Reflexión}
+% Media página: qué tipo de requisito le costó más formular y por qué.
+
+
+% =====================================================================
+\section{Declaración de uso de inteligencia artificial}
+% Si usaste una herramienta de IA solo como apoyo, indica: herramienta,
+% versión, para qué la usaste y cómo verificaste lo obtenido.
+% Si no la usaste, declara expresamente que no se usó.
+
+
+% =====================================================================
+% Quita la línea siguiente cuando cites cada referencia en el texto.
+\nocite{*}
+\printbibliography[title={Referencias}]
+
+\end{document}
