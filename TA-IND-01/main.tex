@@ -8,6 +8,7 @@
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{graphicx}
+\usepackage{amsmath}
 \usepackage{csquotes}
 \usepackage[backend=biber,style=ieee]{biblatex}
 \addbibresource{referencias.bib}
@@ -55,29 +56,243 @@ Término & Definición parafraseada & Ejemplo en el sistema \\
 \end{longtable}
 }
 
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.6\textwidth]{figuras/restriccion_nombre.png}
+  \caption{Mensaje del Explorador de archivos al intentar usar un símbolo no permitido en el nombre de un archivo.}
+  \label{fig:restriccion}
+\end{figure}
+
+
 
 \section{Requisitos del sistema}
 
+Los siguientes requisitos corresponden al Explorador de archivos
+de Windows 10. Se clasificaron según los tipos de requisitos
+descritos en la cláusula 5.2.8.3 de ISO/IEC/IEEE 29148:2018
+y las restricciones descritas en la cláusula 5.2.4.
+Los requisitos de calidad se relacionaron con las características
+y subcaracterísticas de ISO/IEC 25010:2023.
+
+Los criterios de aceptación indican cómo se propone comprobar
+cada requisito. Las cantidades de pruebas y los tiempos
+establecidos son valores propuestos para esta actividad,
+no resultados de pruebas realizadas.
+
 {\small
-\begin{longtable}{>{\raggedright\arraybackslash}p{1cm}
-                  >{\raggedright\arraybackslash}p{4.2cm}
-                  >{\raggedright\arraybackslash}p{1.9cm}
-                  >{\raggedright\arraybackslash}p{2.4cm}
-                  >{\raggedright\arraybackslash}p{2.2cm}
-                  >{\raggedright\arraybackslash}p{2.3cm}}
-\caption{Clasificación de los requisitos del sistema.}\label{tab:requisitos}\\
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{1.2}
+
+\begin{longtable}{%
+>{\raggedright\arraybackslash}p{1cm}%
+>{\raggedright\arraybackslash}p{4cm}%
+>{\raggedright\arraybackslash}p{1.5cm}%
+>{\raggedright\arraybackslash}p{2.5cm}%
+>{\raggedright\arraybackslash}p{2cm}%
+>{\raggedright\arraybackslash}p{2.8cm}%
+}
+
+\caption{Clasificación de los requisitos del sistema}
+\label{tab:requisitos}\\
+
 \toprule
-ID & Enunciado & Tipo & Característica ISO/IEC 25010 & Métrica & Criterio de aceptación \\
+ID & Enunciado & Tipo &
+Característica ISO/IEC 25010 &
+Métrica & Criterio de aceptación \\
 \midrule
 \endfirsthead
+
 \toprule
-ID & Enunciado & Tipo & Característica ISO/IEC 25010 & Métrica & Criterio de aceptación \\
+ID & Enunciado & Tipo &
+Característica ISO/IEC 25010 &
+Métrica & Criterio de aceptación \\
 \midrule
 \endhead
+
 \bottomrule
 \endfoot
+
+RF-01 &
+El Explorador de archivos deberá mostrar en los resultados
+de búsqueda los archivos cuyo nombre contenga el texto
+escrito por el usuario. &
+Funcional &
+N/A &
+N/A &
+En 5 búsquedas de archivos conocidos, cada archivo
+buscado deberá aparecer en la lista de resultados. \\
+\hline
+
+RF-02 &
+El Explorador de archivos deberá mostrar un mensaje
+cuando el usuario intente copiar un archivo a una carpeta
+donde ya exista otro con el mismo nombre. &
+Funcional &
+N/A &
+N/A &
+En 3 pruebas deberán aparecer las opciones
+Reemplazar el archivo en el destino, Omitir este archivo
+y Comparar información de ambos archivos. \\
+\hline
+
+RF-03 &
+El Explorador de archivos deberá mostrar un menú
+de opciones cuando el usuario haga clic derecho
+en un espacio vacío de una carpeta. &
+Funcional &
+N/A &
+N/A &
+En 3 pruebas deberán aparecer las opciones
+Ver, Ordenar por y Nuevo. \\
+\hline
+
+RF-04 &
+El Explorador de archivos deberá mostrar el tipo,
+la ubicación, el tamaño y la fecha de creación
+de una carpeta cuando el usuario abra sus propiedades. &
+Funcional &
+N/A &
+N/A &
+En 3 carpetas se deberán mostrar los cuatro datos
+indicados en la ventana de propiedades. \\
+\hline
+
+RF-05 &
+El Explorador de archivos deberá permitir cambiar
+la presentación de una carpeta de iconos grandes
+a detalles mediante el menú Ver. &
+Funcional &
+N/A &
+N/A &
+En 3 pruebas, después de seleccionar Detalles,
+los archivos deberán aparecer en filas
+con columnas de información. \\
+\hline
+
+RF-06 &
+El Explorador de archivos deberá permitir ordenar
+los archivos de una carpeta por nombre mediante
+la opción Ordenar por. &
+Funcional &
+N/A &
+N/A &
+En 3 pruebas con 10 archivos, sus nombres
+deberán aparecer en orden alfabético ascendente. \\
+\hline
+
+RIE-01 &
+El Explorador de archivos deberá abrir un archivo
+con el programa predeterminado de Windows 10
+cuando el usuario haga doble clic sobre él. &
+Interfaz externa &
+N/A &
+N/A &
+Abrir un archivo PDF, uno JPG y uno TXT.
+Cada archivo deberá abrirse con el programa
+predeterminado configurado para su tipo. \\
+\hline
+
+RNF-01 &
+El Explorador de archivos deberá mostrar el contenido
+de una carpeta con 1000 elementos almacenados
+en una unidad SSD local en un tiempo máximo
+de 2 segundos. &
+Calidad &
+\textit{Performance Efficiency
+(Time behaviour)} &
+Tiempo de carga en segundos &
+En 5 pruebas, el tiempo de carga deberá ser
+de 2 segundos o menos. \\
+\hline
+
+RNF-02 &
+El Explorador de archivos deberá responder a una
+acción de navegación en un tiempo máximo de
+3 segundos después de desconectar una memoria USB
+que se encuentre abierta. &
+Calidad &
+\textit{Performance Efficiency
+(Time behaviour)} &
+Tiempo de respuesta en segundos &
+En 5 desconexiones, deberá abrir otra carpeta en 3 segundos o menos. \\
+\hline
+
+RNF-03 &
+El Explorador de archivos deberá permitir abrir
+una carpeta seleccionada utilizando solamente
+el teclado. &
+Calidad &
+\textit{Interaction Capability
+(Operability)} &
+Aperturas realizadas con el teclado &
+En 5 pruebas, la carpeta seleccionada deberá
+abrirse al presionar la tecla Enter. \\
+\hline
+
+RNF-04 &
+El Explorador de archivos deberá mostrar una
+advertencia cuando el usuario intente renombrar
+un archivo utilizando un carácter no permitido
+en su nombre. &
+Calidad &
+\textit{Interaction Capability
+(User error protection)} &
+Advertencias mostradas &
+En 5 intentos con caracteres no permitidos
+deberá aparecer el aviso que indica los
+caracteres restringidos. \\
+\hline
+
+RNF-05 &
+El Explorador de archivos deberá mostrar el menú
+de clic derecho sobre un archivo en un tiempo máximo
+de 2 segundos. &
+Calidad &
+\textit{Performance Efficiency
+(Time behaviour)} &
+Tiempo de apertura en segundos &
+En 5 pruebas, el menú deberá aparecer
+en 2 segundos o menos. \\
+\hline
+
+REST-01 &
+El Explorador de archivos deberá ejecutarse
+en Windows 10. &
+Restricción tecnológica &
+N/A &
+N/A &
+Comprobar la versión del sistema con
+\texttt{winver} y verificar que el Explorador
+pueda abrirse en Windows 10. \\
+\hline
+
+REST-02 &
+El Explorador de archivos deberá admitir unidades
+de almacenamiento con el sistema de archivos NTFS. &
+Restricción del entorno &
+N/A &
+N/A &
+Comprobar que la unidad utilizada tenga formato NTFS
+y que su contenido pueda mostrarse en el Explorador. \\
+\hline
+
+RU-01 &
+El Explorador de archivos deberá permitir que el usuario abra 
+la carpeta Documentos desde Acceso rápido
+ en un tiempo máximo de 15 segundos. &
+Usabilidad &
+N/A &
+Tiempo para completar la tarea &
+En 3 intentos, el usuario deberá abrir
+la carpeta Documentos en 15 segundos
+o menos por intento. \\
+
 \end{longtable}
 }
+
+
+
+
 
 \section{Autoevaluación}
 {\small
