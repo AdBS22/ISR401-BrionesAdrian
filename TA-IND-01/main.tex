@@ -21,25 +21,16 @@ Ingeniería de Requerimientos (ISR-401), UTEQ}
 
 \maketitle
 
-
 \section{Descripción del sistema}
 El Explorador de archivos de Windows 10 es una herramienta integrada en el sistema operativo que permite al usuario acceder, organizar, visualizar y clasificar los archivos que estén almacenados en el computador. Uno de sus propósitos es ofrecer una interfaz gráfica que permita navegar por carpetas, abrir el menú contextual, acceder a las propiedades de los archivos, copiar y pegar archivos sin necesidad de utilizar comandos. Es utilizado por músicos, que ordenan sus audios por nombre; por docentes, que crean carpetas por cada paralelo y así poder clasificar su material de clase; y por contadores, que agrupan los reportes por períodos. En este trabajo, el sistema se utiliza todos los días en un computador de escritorio con Windows 10 para separar por materia los archivos de la universidad y buscarlos cuando se necesiten.
 
 \section{Resumen analítico de la norma}
-% De 1,5 a 2 páginas, con tus palabras (no una traducción).
-% Debe explicar: qué es un requisito bien formado, las nueve
-% características del requisito individual, las características del
-% conjunto y los términos ambiguos que la norma prohíbe.
-% Cita la cláusula exacta de cada idea, por ejemplo: \cite[Cl.~5.2.5]{iso29148}.
 
-
-% =====================================================================
 \section{Glosario}
-% 10 términos de la cláusula 3, con definición parafraseada y un
-% ejemplo propio en el sistema elegido.
-\begin{longtable}{>{\raggedright\arraybackslash}p{3cm}
-                  >{\raggedright\arraybackslash}p{6.5cm}
-                  >{\raggedright\arraybackslash}p{6cm}}
+{\small
+\begin{longtable}{>{\raggedright\arraybackslash}p{2.7cm}
+                  >{\raggedright\arraybackslash}p{5.9cm}
+                  >{\raggedright\arraybackslash}p{5.8cm}}
 \caption{Glosario de términos de la cláusula 3.}\label{tab:glosario}\\
 \toprule
 Término & Definición parafraseada & Ejemplo en el sistema \\
@@ -51,23 +42,21 @@ Término & Definición parafraseada & Ejemplo en el sistema \\
 \endhead
 \bottomrule
 \endfoot
-% Término 1 & definición & ejemplo \\
+\textit{attribute} (Cl.~3.1.2) & Propiedad o característica de una entidad, la cual puede distinguirse de forma cualitativa o cuantitativa, ya sea por personas o mediante herramientas automatizadas. & En el Explorador de archivos de Windows 10, el tamaño de un archivo es un atributo inherente, porque indica cuánto espacio ocupa, mientras que el propietario es un atributo asignado, ya que identifica al usuario al que pertenece el archivo. \\
+\textit{condition} (Cl.~3.1.6) & Atributo cualitativo o cuantitativo medible, asignado a un requisito el cual indica el evento bajo el cual aplica el mismo. & Cuando un usuario copia un archivo a una carpeta donde ya existe otro con el mismo nombre, el Explorador de archivos de Windows 10 muestra las opciones de reemplazar, omitir o comparar los archivos. \\
+\textit{constraint} (Cl.~3.1.7) & Limitación impuesta de manera externa al sistema, su diseño o implementación, como también al proceso de desarrollo del mismo. & El Explorador no permite que los archivos tengan nombres con caracteres como : o ?. \\
+\textit{context of use} (Cl.~3.1.8) & Es el conjunto de personas, entornos físico y social, actividades y herramientas que intervienen en el uso del producto. & Un estudiante utiliza el Explorador de archivos en su computadora con Windows 10, desde su hogar, para organizar documentos académicos, crear carpetas y gestionar los archivos de sus trabajos universitarios. \\
+\textit{operational scenario} (Cl.~3.1.17) & Descripción de una secuencia de actividades hipotéticas que muestran cómo un producto interactúa con sus usuarios y el entorno. & Una secuencia paso a paso: copiar un archivo, pegarlo en una carpeta donde ya existe ese archivo y ver el mensaje que se muestra. \\
+\textit{requirement} (Cl.~3.1.19) & Enunciado que expresa una necesidad, las condiciones y restricciones asociadas. & \\
+\textit{stakeholder} (Cl.~3.1.28) & Persona u organización que tiene algún interés en un sistema, como usuarios, clientes, desarrolladores, y que busca que este satisfaga sus necesidades y expectativas. & Microsoft, como empresa desarrolladora de Windows 10, tiene interés en que su producto funcione correctamente, ya que su buen funcionamiento contribuye a la satisfacción de los usuarios que lo utilizan. \\
+\textit{user} (Cl.~3.1.35) & Persona o grupo que interactúa con un sistema, o que se beneficia con su uso. & Un docente crea una carpeta por paralelo y agrupa dentro los archivos de cada período. \\
+\textit{validation} (Cl.~3.1.36) & Proceso mediante el cual se comprueba, mediante evidencia objetiva, que un sistema satisface las necesidades de los usuarios y cumple con el uso previsto. & Un estudiante utiliza el Explorador de archivos de Windows 10 para buscar y encontrar un trabajo universitario guardado en su computadora, comprobando que el sistema le permite realizar la tarea que necesita. \\
+\textit{verification} (Cl.~3.1.37) & Proceso mediante el cual se comprueba, mediante evidencia objetiva, que un sistema fue desarrollado correctamente y que cumple con los requisitos establecidos. & Se establece como requisito que el Explorador de archivos permita buscar documentos por su nombre. Para comprobarlo, se introduce el nombre exacto de un archivo conocido y se verifica que aparezca entre los resultados de búsqueda. \\
 \end{longtable}
+}
 
 
-% =====================================================================
 \section{Requisitos del sistema}
-% 15 requisitos que cubran al menos cinco tipos distintos, con al menos
-% cinco de calidad clasificados según ISO/IEC 25010:2023 y con métrica.
-% Las capturas de figuras/ respaldan los requisitos.
-
-% Ejemplo de cómo insertar una captura (descomenta y ajusta el nombre):
-% \begin{figure}[ht]
-%   \centering
-%   \includegraphics[width=0.8\textwidth]{figuras/nombre_de_la_captura.png}
-%   \caption{Descripción de lo que muestra la captura.}
-%   \label{fig:nombre}
-% \end{figure}
 
 {\small
 \begin{longtable}{>{\raggedright\arraybackslash}p{1cm}
@@ -87,16 +76,10 @@ ID & Enunciado & Tipo & Característica ISO/IEC 25010 & Métrica & Criterio de a
 \endhead
 \bottomrule
 \endfoot
-% RQ-01 & enunciado & tipo & característica y subcaracterística & métrica & criterio \\
 \end{longtable}
 }
 
-
-% =====================================================================
 \section{Autoevaluación}
-% Revisa cada requisito contra las nueve características de 5.2.5 y los
-% términos prohibidos de 5.2.7. Para los que fallen, deja la versión
-% anterior y la corregida.
 {\small
 \begin{longtable}{>{\raggedright\arraybackslash}p{1cm}
                   >{\raggedright\arraybackslash}p{5cm}
@@ -113,25 +96,14 @@ ID & Versión anterior & Qué falla & Versión corregida \\
 \endhead
 \bottomrule
 \endfoot
-% RQ-xx & versión anterior & característica o término & versión corregida \\
 \end{longtable}
 }
 
-
-% =====================================================================
 \section{Reflexión}
-% Media página: qué tipo de requisito le costó más formular y por qué.
 
-
-% =====================================================================
 \section{Declaración de uso de inteligencia artificial}
-% Si usaste una herramienta de IA solo como apoyo, indica: herramienta,
-% versión, para qué la usaste y cómo verificaste lo obtenido.
-% Si no la usaste, declara expresamente que no se usó.
 
-
-% =====================================================================
-% Quita la línea siguiente cuando cites cada referencia en el texto.
+% Eliminar la línea \nocite{*} cuando cada referencia esté citada en el texto.
 \nocite{*}
 \printbibliography[title={Referencias}]
 
