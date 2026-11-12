@@ -57,7 +57,7 @@ El resultado es `TA-IND-01/main.pdf`.
 
 ### Dependencias
 
-Paquetes de LaTeX: inputenc, fontenc, babel (opciones spanish y es-tabla), geometry, array, booktabs, longtable, graphicx, csquotes y biblatex (backend biber, estilo ieee).
+Paquetes de LaTeX: inputenc, fontenc, babel (opciones spanish y es-tabla), geometry, array, booktabs, longtable, graphicx, amsmath, csquotes, titlesec y biblatex (backend biber, estilo ieee).
 
 Archivo de bibliografía: `TA-IND-01/referencias.bib`.
 
