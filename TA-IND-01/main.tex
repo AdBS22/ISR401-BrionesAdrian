@@ -23,9 +23,26 @@ Ingeniería de Requerimientos (ISR-401), UTEQ}
 \maketitle
 
 \section{Descripción del sistema}
+
 El Explorador de archivos de Windows 10 es una herramienta integrada en el sistema operativo que permite al usuario acceder, organizar, visualizar y clasificar los archivos que estén almacenados en el computador. Uno de sus propósitos es ofrecer una interfaz gráfica que permita navegar por carpetas, abrir el menú contextual, acceder a las propiedades de los archivos, copiar y pegar archivos sin necesidad de utilizar comandos. Es utilizado por músicos, que ordenan sus audios por nombre; por docentes, que crean carpetas por cada paralelo y así poder clasificar su material de clase; y por contadores, que agrupan los reportes por períodos. En este trabajo, el sistema se utiliza todos los días en un computador de escritorio con Windows 10 para separar por materia los archivos de la universidad y buscarlos cuando se necesiten.
 
 \section{Resumen analítico de la norma}
+
+La ingeniería de requisitos permite identificar y describir lo que necesita un sistema para funcionar de acuerdo con las necesidades de sus usuarios. La norma ISO/IEC/IEEE 29148:2018 explica que los requisitos parten de esas necesidades y deben redactarse de forma que puedan entenderse y comprobarse \cite[Cl.\ 5.2.3]{iso29148}. Pohl y Rupp explican que un requisito no debe permitir diferentes interpretaciones y que quienes lo lean deben entenderlo de la misma manera \cite[Sec.\ 4.6]{pohl2015}.
+
+Un requisito bien formado debe expresar claramente lo que se espera del sistema. La cláusula 5.2.4 de la norma 29148 indica que debe identificar una necesidad concreta y establecer las condiciones necesarias para comprobar su cumplimiento \cite[Cl.\ 5.2.4]{iso29148}. No es suficiente escribir que un programa debe funcionar bien o realizar una tarea rápidamente. Por ejemplo, si se quiere establecer un requisito sobre la búsqueda de archivos en el Explorador de Windows 10, sería necesario definir un tiempo de respuesta y las condiciones en las que debe cumplirse. De esta forma se podría verificar si el requisito se cumple.
+
+La cláusula 5.2.5 presenta nueve características de un requisito individual. La primera es que sea \textbf{necesario}, porque debe responder a una necesidad real del sistema. También debe ser \textbf{apropiado}, es decir, tener el nivel de detalle que corresponde sin incluir decisiones de diseño innecesarias. Debe ser \textbf{no ambiguo}, para que solo tenga una interpretación, y \textbf{completo}, para que pueda comprenderse sin necesitar información adicional. Otra característica es que sea \textbf{singular}, lo que significa que debe describir una sola función, característica o restricción \cite[Cl.\ 5.2.5]{iso29148}.
+
+Las cuatro características restantes son \textbf{factible, verificable, correcto y conforme}. Un requisito factible es aquel que puede cumplirse considerando los recursos y las limitaciones del proyecto. Verificable significa que se puede comprobar mediante pruebas, mediciones u otros métodos. Un requisito correcto debe representar la necesidad que se identificó inicialmente. Conforme significa que respeta el formato y las reglas establecidas para redactar los requisitos \cite[Cl.\ 5.2.5]{iso29148}. Pohl y Rupp también explican varios de estos criterios, especialmente la importancia de que los requisitos sean claros, posibles de realizar y verificables \cite[Sec.\ 4.6]{pohl2015}.
+
+La norma también establece características para un conjunto de requisitos. Según la cláusula 5.2.6, el conjunto debe ser \textbf{completo, consistente, factible, comprensible y capaz de validarse}. Esto quiere decir que los requisitos deben cubrir las necesidades del sistema, no contradecirse entre ellos y poder cumplirse con los recursos disponibles. También deben estar redactados de forma que se entiendan y permitan comprobar que el sistema responde a las necesidades planteadas \cite[Cl.\ 5.2.6]{iso29148}. Por ejemplo, si un requisito permite eliminar archivos y otro prohíbe eliminarlos bajo las mismas condiciones, existiría una contradicción que debería corregirse.
+
+La forma de escribir los requisitos también es importante. La cláusula 5.2.7 señala que se deben evitar palabras que puedan tener diferentes interpretaciones. Por ejemplo \emph{mejor}, \emph{fácil de usar}, \emph{rápidamente}, \emph{casi siempre} o \emph{mínimo}, cuando no se indica exactamente qué significan. La norma también advierte sobre expresiones como \emph{y/o}, pronombres poco claros y palabras absolutas como \emph{siempre} o \emph{nunca} \cite[Cl.\ 5.2.7]{iso29148}. El problema de estas expresiones es que pueden dificultar la comprobación del requisito. Decir que un sistema debe ser rápido no permite saber si cumple lo solicitado. Es más claro establecer un tiempo de respuesta que pueda medirse.
+
+Los requisitos pueden describir las funciones de un sistema o las condiciones de calidad que debe cumplir. SWEBOK también trata la clasificación de los requisitos funcionales y no funcionales, junto con las actividades necesarias para identificarlos, analizarlos, documentarlos y validarlos \cite[Cap.\ 1]{swebok2024}.
+
+La revisión de estas fuentes permite entender que escribir un requisito no consiste solamente en describir una función del sistema. Es necesario definir qué se espera, bajo qué condiciones debe cumplirse y cómo se puede comprobar. En el caso del Explorador de archivos de Windows 10, las funciones que se utilizan diariamente pueden servir como punto de partida para identificar requisitos, pero necesitan una redacción más precisa para poder evaluarlos. Esto también permite reconocer la diferencia entre describir lo que hace un programa y establecer un requisito que pueda verificarse.
 
 \section{Glosario}
 
@@ -66,22 +83,11 @@ Término & Definición parafraseada & Ejemplo en el sistema \\
   \label{fig:restriccion}
 \end{figure}
 
-
-
 \section{Requisitos del sistema}
 
-Los requisitos de la Tabla~\ref{tab:requisitos} corresponden al Explorador de archivos
-de Windows 10. Se clasificaron según los tipos de requisitos
-descritos en la cláusula 5.2.8.3 de ISO/IEC/IEEE 29148:2018
-\cite[Cl.~5.2.8.3]{iso29148} y las restricciones descritas en la cláusula 5.2.4
-\cite[Cl.~5.2.4]{iso29148}.
-Los requisitos de calidad se relacionaron con las características
-y subcaracterísticas de ISO/IEC 25010:2023 \cite{iso25010}.
+Los requisitos de la Tabla~\ref{tab:requisitos} corresponden al Explorador de archivos de Windows 10. Se clasificaron según los tipos de requisitos descritos en la cláusula 5.2.8.3 de ISO/IEC/IEEE 29148:2018 \cite[Cl.~5.2.8.3]{iso29148} y las restricciones descritas en la cláusula 5.2.4 \cite[Cl.~5.2.4]{iso29148}. Los requisitos de calidad se relacionaron con las características y subcaracterísticas de ISO/IEC 25010:2023 \cite{iso25010}.
 
-Los criterios de aceptación indican cómo se propone comprobar
-cada requisito. Las cantidades de pruebas y los tiempos
-establecidos son valores propuestos para esta actividad,
-no resultados de pruebas realizadas.
+Los criterios de aceptación indican cómo se propone comprobar cada requisito. Las cantidades de pruebas y los tiempos establecidos son valores propuestos para esta actividad, no resultados de pruebas realizadas.
 
 {\small
 \setlength{\tabcolsep}{2pt}
@@ -95,27 +101,22 @@ no resultados de pruebas realizadas.
 >{\raggedright\arraybackslash}p{2cm}%
 >{\raggedright\arraybackslash}p{2.8cm}%
 }
-
 \caption{Clasificación de los requisitos del sistema}
 \label{tab:requisitos}\\
-
 \toprule
 ID & Enunciado & Tipo &
 Característica ISO/IEC 25010 &
 Métrica & Criterio de aceptación \\
 \midrule
 \endfirsthead
-
 \toprule
 ID & Enunciado & Tipo &
 Característica ISO/IEC 25010 &
 Métrica & Criterio de aceptación \\
 \midrule
 \endhead
-
 \bottomrule
 \endfoot
-
 RF-01 &
 El Explorador de archivos deberá mostrar en los resultados
 de búsqueda los archivos cuyo nombre contenga el texto
@@ -126,7 +127,6 @@ N/A &
 En 5 búsquedas de archivos conocidos, cada archivo
 buscado deberá aparecer en la lista de resultados. \\
 \hline
-
 RF-02 &
 El Explorador de archivos deberá mostrar un mensaje
 cuando el usuario intente copiar un archivo a una carpeta
@@ -138,7 +138,6 @@ En 3 pruebas deberán aparecer las opciones
 Reemplazar el archivo en el destino, Omitir este archivo
 y Comparar información de ambos archivos. \\
 \hline
-
 RF-03 &
 El Explorador de archivos deberá mostrar un menú
 de opciones cuando el usuario haga clic derecho
@@ -149,7 +148,6 @@ N/A &
 En 3 pruebas deberán aparecer las opciones
 Ver, Ordenar por y Nuevo. \\
 \hline
-
 RF-04 &
 El Explorador de archivos deberá mostrar el tipo,
 la ubicación, el tamaño y la fecha de creación
@@ -160,7 +158,6 @@ N/A &
 En 3 carpetas se deberán mostrar los cuatro datos
 indicados en la ventana de propiedades. \\
 \hline
-
 RF-05 &
 El Explorador de archivos deberá permitir cambiar
 la presentación de una carpeta de iconos grandes
@@ -172,7 +169,6 @@ En 3 pruebas, después de seleccionar Detalles,
 los archivos deberán aparecer en filas
 con columnas de información. \\
 \hline
-
 RF-06 &
 El Explorador de archivos deberá permitir ordenar
 los archivos de una carpeta por nombre mediante
@@ -183,7 +179,6 @@ N/A &
 En 3 pruebas con 10 archivos, sus nombres
 deberán aparecer en orden alfabético ascendente. \\
 \hline
-
 RIE-01 &
 El Explorador de archivos deberá abrir un archivo
 con el programa predeterminado de Windows 10
@@ -195,7 +190,6 @@ Abrir un archivo PDF, uno JPG y uno TXT.
 Cada archivo deberá abrirse con el programa
 predeterminado configurado para su tipo. \\
 \hline
-
 RNF-01 &
 El Explorador de archivos deberá mostrar el contenido
 de una carpeta con 1000 elementos almacenados
@@ -208,7 +202,6 @@ Tiempo de carga en segundos &
 En 5 pruebas, el tiempo de carga deberá ser
 de 2 segundos o menos. \\
 \hline
-
 RNF-02 &
 El Explorador de archivos deberá responder a una
 acción de navegación en un tiempo máximo de
@@ -220,7 +213,6 @@ Calidad &
 Tiempo de respuesta en segundos &
 En 5 desconexiones, deberá abrir otra carpeta en 3 segundos o menos. \\
 \hline
-
 RNF-03 &
 El Explorador de archivos deberá permitir abrir
 una carpeta seleccionada utilizando solamente
@@ -232,7 +224,6 @@ Aperturas realizadas con el teclado &
 En 5 pruebas, la carpeta seleccionada deberá
 abrirse al presionar la tecla Enter. \\
 \hline
-
 RNF-04 &
 El Explorador de archivos deberá mostrar una
 advertencia cuando el usuario intente renombrar
@@ -246,7 +237,6 @@ En 5 intentos con caracteres no permitidos
 deberá aparecer el aviso que indica los
 caracteres restringidos. \\
 \hline
-
 RNF-05 &
 El Explorador de archivos deberá mostrar el menú
 de clic derecho sobre un archivo en un tiempo máximo
@@ -258,7 +248,6 @@ Tiempo de apertura en segundos &
 En 5 pruebas, el menú deberá aparecer
 en 2 segundos o menos. \\
 \hline
-
 REST-01 &
 El Explorador de archivos deberá ejecutarse
 en Windows 10. &
@@ -269,7 +258,6 @@ Comprobar la versión del sistema con
 \texttt{winver} y verificar que el Explorador
 pueda abrirse en Windows 10. \\
 \hline
-
 REST-02 &
 El Explorador de archivos deberá admitir unidades
 de almacenamiento con el sistema de archivos NTFS. &
@@ -279,7 +267,6 @@ N/A &
 Comprobar que la unidad utilizada tenga formato NTFS
 y que su contenido pueda mostrarse en el Explorador. \\
 \hline
-
 RU-01 &
 El Explorador de archivos deberá permitir que el usuario abra
 la carpeta Documentos desde Acceso rápido
@@ -290,28 +277,16 @@ Tiempo para completar la tarea &
 En 3 intentos, el usuario deberá abrir
 la carpeta Documentos en 15 segundos
 o menos por intento. \\
-
 \end{longtable}
 }
 
 \section{Autoevaluación}
 
-Se revisaron los 15 requisitos de la versión final tomando
-en cuenta las nueve características de la cláusula 5.2.5,
-las recomendaciones de redacción de la cláusula 5.2.4
-y los términos ambiguos de la cláusula 5.2.7 de
-ISO/IEC/IEEE 29148:2018 \cite{iso29148}.
+Se revisaron los 15 requisitos de la versión final tomando en cuenta las nueve características de la cláusula 5.2.5, las recomendaciones de redacción de la cláusula 5.2.4 y los términos ambiguos de la cláusula 5.2.7 de ISO/IEC/IEEE 29148:2018 \cite{iso29148}.
 
-Durante la revisión se encontraron requisitos que necesitaban
-una redacción más precisa, otros que incluían varias acciones
-y algunos que no coincidían con las capturas disponibles.
-También se corrigieron clasificaciones y se reemplazaron
-requisitos que no tenían suficiente respaldo.
+Durante la revisión se encontraron requisitos que necesitaban una redacción más precisa, otros que incluían varias acciones y algunos que no coincidían con las capturas disponibles. También se corrigieron clasificaciones y se reemplazaron requisitos que no tenían suficiente respaldo.
 
-De los 15 requisitos finales, 14 tienen una versión anterior
-que fue modificada o ajustada. El requisito RNF-05 fue
-sustituido por otro que trata una función diferente.
-La Tabla~\ref{tab:autoevaluacion} muestra las correcciones.
+De los 15 requisitos finales, 14 tienen una versión anterior que fue modificada o ajustada. El requisito RNF-05 fue sustituido por otro que trata una función diferente. La Tabla~\ref{tab:autoevaluacion} muestra las correcciones.
 
 {\small
 \setlength{\tabcolsep}{2pt}
@@ -323,23 +298,18 @@ La Tabla~\ref{tab:autoevaluacion} muestra las correcciones.
 >{\raggedright\arraybackslash}p{3.2cm}%
 >{\raggedright\arraybackslash}p{5.3cm}%
 }
-
 \caption{Autoevaluación y corrección de los requisitos}
 \label{tab:autoevaluacion}\\
-
 \toprule
 ID & Versión anterior & Qué falla & Versión corregida \\
 \midrule
 \endfirsthead
-
 \toprule
 ID & Versión anterior & Qué falla & Versión corregida \\
 \midrule
 \endhead
-
 \bottomrule
 \endfoot
-
 RF-01 &
 El Explorador de archivos deberá mostrar los archivos
 y carpetas que coincidan con el texto escrito por el
@@ -351,7 +321,6 @@ El Explorador de archivos deberá mostrar en los resultados
 de búsqueda los archivos cuyo nombre contenga el texto
 escrito por el usuario. \\
 \hline
-
 RF-02 &
 El Explorador de archivos deberá mostrar un mensaje
 cuando el usuario intente copiar o mover un archivo
@@ -362,7 +331,6 @@ El Explorador de archivos deberá mostrar un mensaje
 cuando el usuario intente copiar un archivo a una carpeta
 donde ya exista otro con el mismo nombre. \\
 \hline
-
 RF-03 &
 El Explorador de archivos deberá mostrar un menú de
 opciones cuando el usuario haga clic derecho sobre
@@ -373,7 +341,6 @@ El Explorador de archivos deberá mostrar un menú
 de opciones cuando el usuario haga clic derecho
 en un espacio vacío de una carpeta. \\
 \hline
-
 RF-04 &
 El Explorador de archivos deberá mostrar la ubicación,
 el tamaño, las fechas y otras propiedades del archivo
@@ -386,7 +353,6 @@ El Explorador de archivos deberá mostrar el tipo,
 la ubicación, el tamaño y la fecha de creación
 de una carpeta cuando el usuario abra sus propiedades. \\
 \hline
-
 RF-05
 (antes RH-01) &
 El Explorador de archivos deberá permitir al usuario
@@ -399,7 +365,6 @@ El Explorador de archivos deberá permitir cambiar
 la presentación de una carpeta de iconos grandes
 a detalles mediante el menú Ver. \\
 \hline
-
 RF-06
 (antes RH-02) &
 El Explorador de archivos deberá permitir al usuario
@@ -412,7 +377,6 @@ El Explorador de archivos deberá permitir ordenar
 los archivos de una carpeta por nombre mediante
 la opción Ordenar por. \\
 \hline
-
 RIE-01 &
 El Explorador de archivos deberá utilizar las funciones
 de Windows 10 para abrir los archivos con los programas
@@ -423,7 +387,6 @@ El Explorador de archivos deberá abrir un archivo
 con el programa predeterminado de Windows 10
 cuando el usuario haga doble clic sobre él. \\
 \hline
-
 RNF-01 &
 El Explorador de archivos deberá mostrar el contenido
 de una carpeta con 1,000 elementos en un tiempo
@@ -438,7 +401,6 @@ de una carpeta con 1000 elementos almacenados
 en una unidad SSD local en un tiempo máximo
 de 2 segundos. \\
 \hline
-
 RNF-02 &
 El Explorador de archivos deberá seguir funcionando
 cuando se desconecte una memoria USB mientras
@@ -452,7 +414,6 @@ acción de navegación en un tiempo máximo de
 3 segundos después de desconectar una memoria USB
 que se encuentre abierta. \\
 \hline
-
 RNF-03 &
 El Explorador de archivos deberá permitir abrir
 carpetas, regresar a la carpeta anterior y seleccionar
@@ -463,7 +424,6 @@ El Explorador de archivos deberá permitir abrir
 una carpeta seleccionada utilizando solamente
 el teclado. \\
 \hline
-
 RNF-04 &
 El Explorador de archivos deberá mostrar una
 advertencia cuando el usuario intente guardar
@@ -476,7 +436,6 @@ advertencia cuando el usuario intente renombrar
 un archivo utilizando un carácter no permitido
 en su nombre. \\
 \hline
-
 REST-01 &
 El Explorador de archivos deberá ejecutarse
 en el equipo utilizado para las pruebas,
@@ -487,7 +446,6 @@ la restricción del sistema operativo. &
 El Explorador de archivos deberá ejecutarse
 en Windows 10. \\
 \hline
-
 REST-02 &
 El Explorador de archivos deberá permitir leer
 y guardar archivos en unidades que utilicen
@@ -498,7 +456,6 @@ Se limitó el requisito al formato NTFS. &
 El Explorador de archivos deberá admitir unidades
 de almacenamiento con el sistema de archivos NTFS. \\
 \hline
-
 RU-01 &
 Un usuario familiarizado con Windows 10 deberá
 poder abrir la carpeta Documentos desde Acceso rápido
@@ -511,43 +468,31 @@ También se utilizaba una condición negativa:
 El Explorador de archivos deberá permitir que el usuario
 abra la carpeta Documentos desde Acceso rápido
 en un tiempo máximo de 15 segundos. \\
-
 \end{longtable}
 }
 
 \subsection*{Requisitos retirados o reemplazados}
 
-Durante la revisión también se retiraron algunos requisitos
-que estaban presentes en los primeros borradores.
+Durante la revisión también se retiraron algunos requisitos que estaban presentes en los primeros borradores.
 
-Los requisitos PROC-01 y PROC-02 trataban sobre el uso de Git
-y la documentación del equipo de desarrollo. Se retiraron
-porque esas actividades no podían comprobarse directamente
-mediante el Explorador de archivos.
+Los requisitos PROC-01 y PROC-02 trataban sobre el uso de Git y la documentación del equipo de desarrollo. Se retiraron porque esas actividades no podían comprobarse directamente mediante el Explorador de archivos.
 
-El requisito RNF-06, relacionado con el cambio de escala
-de pantalla, se retiró porque no se contaba con suficiente
-respaldo para justificar su clasificación con la copia
-disponible de ISO/IEC 25010:2023.
+El requisito RNF-06, relacionado con el cambio de escala de pantalla, se retiró porque no se contaba con suficiente respaldo para justificar su clasificación con la copia disponible de ISO/IEC 25010:2023.
 
-El requisito anterior RNF-05 trataba sobre agregar opciones
-de otros programas al menú contextual. Se retiró porque
-incluía la expresión subjetiva
-\enquote{sin que esto afecte demasiado su funcionamiento}
-y no se contaba con evidencia para comprobar esa función.
+El requisito anterior RNF-05 trataba sobre agregar opciones de otros programas al menú contextual. Se retiró porque incluía la expresión subjetiva \enquote{sin que esto afecte demasiado su funcionamiento} y no se contaba con evidencia para comprobar esa función.
 
-En su lugar se formuló un nuevo RNF-05, relacionado con
-el tiempo de apertura del menú contextual. No se considera
-una corrección del requisito anterior, ya que ambos
-describen comportamientos diferentes.
-
+En su lugar se formuló un nuevo RNF-05, relacionado con el tiempo de apertura del menú contextual. No se considera una corrección del requisito anterior, ya que ambos describen comportamientos diferentes.
 
 \section{Reflexión}
 
+Los requisitos de calidad fueron los más difíciles de formular, porque no bastaba con describir lo que debía hacer el Explorador de archivos de Windows 10. También era necesario establecer condiciones que permitieran comprobar su cumplimiento. Una de las principales dificultades fue definir los tiempos de respuesta y las métricas, ya que no se habían realizado mediciones que justificaran esos valores. Esto ocurrió con el requisito RNF-01, donde inicialmente se estableció un tiempo máximo de 1,2 segundos para mostrar el contenido de una carpeta. Después se cambió a 2 segundos y se incorporó al enunciado la condición de que los archivos estuvieran almacenados en una unidad SSD local. El tiempo establecido sigue siendo un valor propuesto para la actividad.
+
+Otra dificultad fue clasificar los requisitos según la norma ISO/IEC 25010:2023. En uno de los borradores se incluyó un requisito relacionado con el cambio de escala de pantalla, pero se decidió retirarlo porque no se podía confirmar la subcaracterística correspondiente con la parte disponible de la norma. También se encontró un problema en el requisito RNF-05, donde se utilizaba la expresión \enquote{sin que esto afecte demasiado su funcionamiento}. Esa frase era subjetiva y no permitía comprobar fácilmente su cumplimiento. Por ese motivo, se sustituyó por un requisito relacionado con el tiempo de apertura del menú contextual.
+
+La revisión permitió comprender que los requisitos de calidad necesitan condiciones claras y criterios que puedan comprobarse. Para una próxima actividad sería conveniente obtener una copia completa de la norma antes de clasificar los requisitos y realizar mediciones en el equipo utilizado antes de establecer tiempos de respuesta. También sería útil revisar cada requisito por separado para identificar expresiones ambiguas y comprobar que las condiciones indicadas coincidan con las evidencias disponibles.
+
 \section{Declaración de uso de inteligencia artificial}
 
-% Eliminar la línea \nocite{*} cuando cada referencia esté citada en el texto.
-\nocite{*}
 \printbibliography[title={Referencias}]
 
 \end{document}
